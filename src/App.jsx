@@ -3,6 +3,7 @@ import { useWeather } from './hooks/useWeather'
 import { useGeolocation } from './hooks/useGeolocation'
 import { findNearest } from './utils/distanceCalc'
 import { CurrentCard } from './components/CurrentCard'
+import { TwoHourCard } from './components/TwoHourCard'
 import { ForecastBands } from './components/ForecastBands'
 import { AreaSelector } from './components/AreaSelector'
 import { ShareButton } from './components/ShareButton'
@@ -164,11 +165,10 @@ export default function App() {
             {selectedArea ? (
               <>
                 <CurrentCard areaName={selectedArea} weather={weather} updatedAt={updatedAt} />
+                <TwoHourCard areaName={selectedArea} weather={weather} />
                 <ForecastBands
                   periods={data?.periods}
                   tempRange={data?.tempRange}
-                  humidRange={data?.humidRange}
-                  general24={data?.general24}
                 />
                 <ShareButton areaName={selectedArea} weather={weather} onToast={showToast} />
               </>

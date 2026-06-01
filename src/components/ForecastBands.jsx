@@ -33,7 +33,7 @@ function majorityForecast(regions) {
   return Object.entries(freq).sort((a, b) => b[1] - a[1])[0][0]
 }
 
-export function ForecastBands({ periods, tempRange, general24 }) {
+export function ForecastBands({ periods, tempRange }) {
   if (!periods || periods.length === 0) {
     return (
       <div style={{ margin: '0 16px 16px', border: '1px solid #E0E0E0', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#AAA', fontSize: '14px' }}>
@@ -83,11 +83,6 @@ export function ForecastBands({ periods, tempRange, general24 }) {
         })}
       </div>
 
-      {general24 && (
-        <div style={{ padding: '12px 20px', fontSize: '13px', color: '#555', borderTop: '1px solid #F0F0F0' }}>
-          {general24}
-        </div>
-      )}
     </div>
   )
 }
