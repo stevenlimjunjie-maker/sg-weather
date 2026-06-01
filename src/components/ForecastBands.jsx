@@ -33,7 +33,7 @@ function majorityForecast(regions) {
   return Object.entries(freq).sort((a, b) => b[1] - a[1])[0][0]
 }
 
-export function ForecastBands({ periods, tempRange, humidRange, general24 }) {
+export function ForecastBands({ periods, tempRange, general24 }) {
   if (!periods || periods.length === 0) {
     return (
       <div style={{ margin: '0 16px 16px', border: '1px solid #E0E0E0', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#AAA', fontSize: '14px' }}>
@@ -54,7 +54,7 @@ export function ForecastBands({ periods, tempRange, humidRange, general24 }) {
       {(tempRange?.low != null || tempRange?.high != null) && (
         <div style={{
           display: 'grid',
-          gridTemplateColumns: humidRange?.low != null ? '1fr 1fr 1fr' : '1fr 1fr',
+          gridTemplateColumns: '1fr 1fr',
           padding: '12px 16px',
           background: '#FAFAFA',
           margin: '12px 16px',
@@ -65,18 +65,10 @@ export function ForecastBands({ periods, tempRange, humidRange, general24 }) {
             <div style={{ fontSize: 'clamp(0.75rem, 2.5vw, 1.25rem)', fontWeight: '700', color: '#2196F3' }}>{tempRange.low}°</div>
             <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>Low</div>
           </div>
-          <div style={{ textAlign: 'center', borderRight: humidRange?.low != null ? '1px solid #E0E0E0' : 'none', padding: '0 8px' }}>
+          <div style={{ textAlign: 'center', padding: '0 8px' }}>
             <div style={{ fontSize: 'clamp(0.75rem, 2.5vw, 1.25rem)', fontWeight: '700', color: '#FF5722' }}>{tempRange.high}°</div>
             <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>High</div>
           </div>
-          {humidRange?.low != null && (
-            <div style={{ textAlign: 'center', paddingLeft: '8px' }}>
-              <div style={{ fontSize: 'clamp(0.75rem, 2.5vw, 1rem)', fontWeight: '700', color: '#4CAF50' }}>
-                {humidRange.low}–{humidRange.high}%
-              </div>
-              <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>Humidity</div>
-            </div>
-          )}
         </div>
       )}
 
