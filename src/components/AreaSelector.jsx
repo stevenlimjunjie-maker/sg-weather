@@ -1,7 +1,7 @@
 export function AreaSelector({ areas, selected, onChange }) {
   return (
-    <div style={{ padding: '0 16px 16px' }}>
-      <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#888', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+    <div style={{ flexShrink: 0 }}>
+      <label style={{ display: 'block', fontSize: '10px', fontWeight: '600', color: '#888', marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
         Select your area
       </label>
       <div style={{ position: 'relative' }}>
@@ -10,12 +10,12 @@ export function AreaSelector({ areas, selected, onChange }) {
           onChange={e => onChange(e.target.value)}
           style={{
             width: '100%',
-            padding: '12px 40px 12px 14px',
-            fontSize: '16px',
+            padding: '8px 36px 8px 12px',
+            fontSize: '14px',
             fontFamily: 'inherit',
             fontWeight: '500',
             border: '1px solid #E0E0E0',
-            borderRadius: '12px',
+            borderRadius: '10px',
             background: '#FAFAFA',
             color: '#1A1A1A',
             appearance: 'none',
@@ -28,7 +28,7 @@ export function AreaSelector({ areas, selected, onChange }) {
             <option key={a.name} value={a.name}>{a.name}</option>
           ))}
         </select>
-        <span style={{ position: 'absolute', right: '14px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#888', fontSize: '12px' }}>
+        <span style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#888', fontSize: '11px' }}>
           ▼
         </span>
       </div>

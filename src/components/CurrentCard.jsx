@@ -11,41 +11,42 @@ export function CurrentCard({ areaName, weather, updatedAt }) {
 
   return (
     <div style={{
-      margin: '16px',
+      flexShrink: 0,
       border: '1px solid #E0E0E0',
-      borderRadius: '16px',
+      borderRadius: '12px',
       background: '#FFF',
       overflow: 'hidden',
     }}>
       <div style={{
         background: 'linear-gradient(135deg, #FFFBED 0%, #FFF 100%)',
-        padding: '24px 20px 20px',
+        padding: '14px',
       }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <div>
-            <div style={{ fontSize: '11px', fontWeight: '700', color: '#F5A623', letterSpacing: '1px' }}>
+            <div style={{ fontSize: '10px', fontWeight: '700', color: '#F5A623', letterSpacing: '1px' }}>
               📍 {areaName?.toUpperCase()}
             </div>
-            <div style={{ fontSize: '15px', color: '#333', marginTop: '4px' }}>
+            <div style={{ fontSize: '13px', color: '#333', marginTop: '3px' }}>
               {forecast}
             </div>
           </div>
-          <div style={{ fontSize: '56px', lineHeight: 1, marginLeft: '12px' }}>
+          <div style={{ fontSize: '44px', lineHeight: 1, marginLeft: '12px' }}>
             {emoji}
           </div>
         </div>
+
         {weather?.temperature != null && (
-          <div style={{ marginTop: '16px' }}>
-            <span style={{ fontSize: '52px', fontWeight: '800', color: '#1A1A1A', lineHeight: 1 }}>
+          <div style={{ marginTop: '8px' }}>
+            <span style={{ fontSize: '40px', fontWeight: '800', color: '#1A1A1A', lineHeight: 1 }}>
               {Math.round(weather.temperature)}
             </span>
-            <span style={{ fontSize: '24px', fontWeight: '600', color: '#666', verticalAlign: 'super' }}>°C</span>
+            <span style={{ fontSize: '18px', fontWeight: '600', color: '#666', verticalAlign: 'super' }}>°C</span>
           </div>
         )}
 
         {updatedAt && (
-          <div style={{ marginTop: '12px', textAlign: 'right' }}>
-            <span style={{ fontSize: '11px', color: '#AAA' }}>Updated {formatTime(updatedAt)}</span>
+          <div style={{ marginTop: '6px', textAlign: 'right' }}>
+            <span style={{ fontSize: '10px', color: '#AAA' }}>Updated {formatTime(updatedAt)}</span>
           </div>
         )}
       </div>
