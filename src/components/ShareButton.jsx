@@ -38,6 +38,7 @@ export function ShareButton({ areaName, weather, onToast }) {
         onClick={handleShare}
         style={{
           width: '100%',
+          boxSizing: 'border-box',
           padding: '14px',
           background: '#F5A623',
           color: '#FFF',
@@ -71,6 +72,7 @@ export function ShareButton({ areaName, weather, onToast }) {
         fontSize: '13px',
         color: '#555',
         lineHeight: 1.5,
+        wordBreak: 'break-word',
       }}>
         {text}
       </div>

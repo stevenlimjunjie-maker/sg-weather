@@ -53,33 +53,29 @@ export function ForecastBands({ periods, tempRange, humidRange, general24 }) {
       {/* Temp + humidity range */}
       {(tempRange?.low != null || tempRange?.high != null) && (
         <div style={{
-          display: 'flex',
-          gap: '12px',
+          display: 'grid',
+          gridTemplateColumns: humidRange?.low != null ? '1fr 1fr 1fr' : '1fr 1fr',
           padding: '12px 16px',
           background: '#FAFAFA',
           margin: '12px 16px',
           borderRadius: '10px',
           border: '1px solid #F0F0F0',
         }}>
-          <div style={{ flex: 1, textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', fontWeight: '700', color: '#2196F3' }}>{tempRange.low}°</div>
+          <div style={{ textAlign: 'center', borderRight: '1px solid #E0E0E0', paddingRight: '8px' }}>
+            <div style={{ fontSize: 'clamp(0.75rem, 2.5vw, 1.25rem)', fontWeight: '700', color: '#2196F3' }}>{tempRange.low}°</div>
             <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>Low</div>
           </div>
-          <div style={{ width: '1px', background: '#E0E0E0' }} />
-          <div style={{ flex: 1, textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', fontWeight: '700', color: '#FF5722' }}>{tempRange.high}°</div>
+          <div style={{ textAlign: 'center', borderRight: humidRange?.low != null ? '1px solid #E0E0E0' : 'none', padding: '0 8px' }}>
+            <div style={{ fontSize: 'clamp(0.75rem, 2.5vw, 1.25rem)', fontWeight: '700', color: '#FF5722' }}>{tempRange.high}°</div>
             <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>High</div>
           </div>
           {humidRange?.low != null && (
-            <>
-              <div style={{ width: '1px', background: '#E0E0E0' }} />
-              <div style={{ flex: 1, textAlign: 'center' }}>
-                <div style={{ fontSize: '16px', fontWeight: '700', color: '#4CAF50' }}>
-                  {humidRange.low}–{humidRange.high}%
-                </div>
-                <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>Humidity</div>
+            <div style={{ textAlign: 'center', paddingLeft: '8px' }}>
+              <div style={{ fontSize: 'clamp(0.75rem, 2.5vw, 1rem)', fontWeight: '700', color: '#4CAF50' }}>
+                {humidRange.low}–{humidRange.high}%
               </div>
-            </>
+              <div style={{ fontSize: '11px', color: '#888', fontWeight: '600', textTransform: 'uppercase' }}>Humidity</div>
+            </div>
           )}
         </div>
       )}
