@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #F0F0F0;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.app-root {
+  background: #FFFFFF;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F0F0F0;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.app-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.app-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: -0.3px;
+}
+
+.scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+select:focus {
+  outline: 2px solid #F5A623;
+  outline-offset: -2px;
+}
+
+@media (min-width: 480px) {
+  body {
+    background: #E8E8E8;
+    padding: 20px 0;
+  }
+  .app-root {
+    border-radius: 24px;
+    min-height: calc(100vh - 40px);
+    margin: 0 auto;
+  }
+}
