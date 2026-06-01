@@ -33,10 +33,8 @@ export function CurrentCard({ areaName, weather, updatedAt }) {
           <div style={{ fontSize: '56px', lineHeight: 1, marginLeft: '12px' }}>
             {emoji}
           </div>
-        </div>
 
-
-{updatedAt && (
+        {updatedAt && (
           <div style={{ marginTop: '12px', textAlign: 'right' }}>
             <span style={{ fontSize: '11px', color: '#AAA' }}>Updated {formatTime(updatedAt)}</span>
           </div>
