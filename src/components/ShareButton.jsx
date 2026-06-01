@@ -4,12 +4,10 @@ export function ShareButton({ areaName, weather, onToast }) {
   if (!areaName || !weather) return null
 
   const forecast = weather?.area?.forecast ?? ''
-  const temp = weather?.temperature != null ? `${Math.round(weather.temperature)}°C` : ''
   const emoji = getWeatherEmoji(forecast)
 
   const text = [
-    temp && `It's ${temp}`,
-    forecast && `and ${forecast}`,
+    forecast && `It's ${forecast}`,
     `in ${areaName} right now ${emoji}`,
     '— via SG Weather 🇸🇬',
   ].filter(Boolean).join(' ')

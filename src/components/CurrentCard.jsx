@@ -35,16 +35,8 @@ export function CurrentCard({ areaName, weather, updatedAt }) {
           </div>
         </div>
 
-        {weather?.temperature != null && (
-          <div style={{ marginTop: '16px' }}>
-            <span style={{ fontSize: '52px', fontWeight: '800', color: '#1A1A1A', lineHeight: 1 }}>
-              {Math.round(weather.temperature)}
-            </span>
-            <span style={{ fontSize: '24px', fontWeight: '600', color: '#666', verticalAlign: 'super' }}>°C</span>
-          </div>
-        )}
 
-        {updatedAt && (
+{updatedAt && (
           <div style={{ marginTop: '12px', textAlign: 'right' }}>
             <span style={{ fontSize: '11px', color: '#AAA' }}>Updated {formatTime(updatedAt)}</span>
           </div>
